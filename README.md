@@ -1,6 +1,6 @@
 # Knocks' Town
 
-> My top-notch Nuxt.js project
+> GreenTile's website lunching using nuxt-js
 ![greentile's knocks'town](https://raw.githubusercontent.com/abedigram/knockstown/master/knockstown.jpg)
 ## Build Setup
 
