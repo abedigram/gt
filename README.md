@@ -1,7 +1,8 @@
-# gt
+# Knocks' Town
 
 > My top-notch Nuxt.js project
 
+<img src"https://github.com/abedigram/knockstown/blob/master/knockstown.jpg?raw=true"/>
 ## Build Setup
 
 ``` bash
