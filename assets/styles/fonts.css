@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'vazir';
+    src: 
+    url('~/assets/fonts/vazir.woff2') format('woff2'),
+    url('~/assets/fonts/vazir.ttf') format('ttf'),
+    url('~/assets/fonts/vazir.eot') format('eot'),
+    url('~/assets/fonts/vazir.woff') format('woff');	
+	font-weight: normal;
+	font-style: normal;
+	}
