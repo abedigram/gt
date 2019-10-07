@@ -3,16 +3,16 @@
     <section class="intro">
       <h1>the story begins!</h1>
     </section>
-    <PostsList />
+    <PostList />
   </div>
 </template>
 
 <script>
-import PostsList from '~/components/Posts/PostsList'
+import PostList from '@/components/Posts/PostList'
 
 export default {
   components:{
-    PostsList
+    PostList
   }
 }
 </script>

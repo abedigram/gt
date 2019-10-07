@@ -1,29 +1,26 @@
 <template>
-    <div class="admin-page">
-        <section class="new-post">
-            <button>
-                Create post
-            </button>
-        </section>
-        <section class="existing-post">
-            <h1>
-                existing post
-            </h1>
-            <PostsList />
-        </section>
-    </div>
+  <div class="admin-page">
+    <section class="new-post">
+      <button @click="$router.push('/admin/new-post')">Create Post</button>
+    </section>
+    <section class="existing-posts">
+      <h1>Existing Posts</h1>
+      <PostList isAdmin />
+    </section>
+  </div>
 </template>
 
 <script>
-import PostsList from '@/components/Posts/PostsList';
+import PostList from '@/components/Posts/PostList'
+
 export default {
-    components:{
-        PostsList
-    }
+  components: {
+    PostList
+  }
 }
 </script>
 
-<style  scoped>
+<style scoped>
 .admin-page {
   padding: 20px;
 }
@@ -38,3 +35,4 @@ export default {
   text-align: center;
 }
 </style>
+

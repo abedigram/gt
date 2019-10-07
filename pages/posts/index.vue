@@ -1,15 +1,15 @@
 <template>
     <div class="posts-page">
-        <PostsList />
+        <PostList />
     </div>
 </template>
 
 <script>
-import PostsList from "@/components/posts/PostsList"
+import PostList from '@/components/Posts/PostList'
 
 export default {
     components:{
-        PostsList
+        PostList
     }
 }
 </script>
