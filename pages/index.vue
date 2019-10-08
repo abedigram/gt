@@ -15,7 +15,7 @@ export default {
     PostList
   },
   asyncData(context, callback){
-    console.log("async data is executed");
+    console.log(context);
     setTimeout(()=>{
       callback(null, { loadedPosts : [
           { id:"1", title:"first post", previewText:"an awesome post", thumbnail:"https://picsum.photos/400/200"},
