@@ -14,19 +14,22 @@ export default {
   components:{
     PostList
   },
-  data() {
-    return{
-      loadedPosts:[]
-    }
-  },
-  created(){
+  asyncData(context, callback){
     setTimeout(()=>{
-      this.loadedPosts = [
-        { id:"1", title:"first post", previewText:"an awesome post", thumbnail:"https://picsum.photos/400/200"},
-        { id:"2", title:"second post", previewText:"an awesome post", thumbnail:"https://picsum.photos/400/200"},
-        { id:"3", title:"third post", previewText:"an awesome post", thumbnail:"https://picsum.photos/400/200"}
-      ]
-    },1500)  
+      callback(null, { loadedPosts : [
+          { id:"1", title:"first post", previewText:"an awesome post", thumbnail:"https://picsum.photos/400/200"},
+          { id:"2", title:"second post", previewText:"an awesome post", thumbnail:"https://picsum.photos/400/200"},
+          { id:"3", title:"third post", previewText:"an awesome post", thumbnail:"https://picsum.photos/400/200"}
+          ]});
+        },1500);
+      },
+  // data() {
+  //   return{
+  //     loadedPosts:[]
+  //   }
+  // },
+  created(){
+
   }
 }
 </script>
