@@ -1,7 +1,7 @@
 # Knocks' Town
 
 > GreenTile's website lunching using nuxt-js
-![greentile's knocks'town](https://raw.githubusercontent.com/abedigram/knockstown/master/knockstown.jpg)
+![greentile's knocks'town](https://github.com/abedigram/knockstown/blob/master/knockstown.jpg)
 ## Build Setup
 
 ``` bash
