@@ -1,23 +1,46 @@
 <template>
-    <div class="posts-page">
-        <PostList />
-    </div>
+  <div class="posts-page">
+    <PostList :posts="loadedPosts" />
+  </div>
 </template>
 
 <script>
-import PostList from '@/components/Posts/PostList'
+import PostList from "@/components/Posts/PostList";
 
 export default {
-    components:{
-        PostList
-    }
-}
+  components: {
+    PostList
+  },
+  asyncData(context, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPosts: [
+          {
+            id: "1",
+            title: "First Post",
+            previewText: "This is our first post!",
+            thumbnail:
+              "https://picsum.photos/400/200"
+          },
+          {
+            id: "2",
+            title: "Second Post",
+            previewText: "This is our second post!",
+            thumbnail:
+              "https://picsum.photos/400/200"
+          }
+        ]
+      });
+    }, 1000);
+  }
+};
 </script>
 
+
 <style scoped>
-    .posts-page{
-        display: flex;
-        justify-content: center;
-        align-content: center;
-    }  
+.posts-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>
