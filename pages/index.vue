@@ -3,7 +3,7 @@
     <section class="intro">
       <h1>the story begins!</h1>
     </section>
-    <PostList />
+    <PostList :posts="loadedPosts"/>
   </div>
 </template>
 
@@ -13,6 +13,15 @@ import PostList from '@/components/Posts/PostList'
 export default {
   components:{
     PostList
+  },
+  data() {
+    return{
+      loadedPosts:[
+        { id:"1", title:"first post", previewText:"an awesome post", thumbnail:"https://picsum.photos/400/200"},
+        { id:"2", title:"second post", previewText:"an awesome post", thumbnail:"https://picsum.photos/400/200"},
+        { id:"3", title:"third post", previewText:"an awesome post", thumbnail:"https://picsum.photos/400/200"}
+      ]
+    }
   }
 }
 </script>

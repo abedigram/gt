@@ -1,7 +1,9 @@
 <template>
     <nuxt-link :to="'/posts/'+ id" class="post-preview">
         <article>
-          <div class="post-thumbnail" ></div>
+            <div>
+            <img :src="thumbnail" alt="">
+            </div>
           <div class="post-content">
             <h1>{{ title }}</h1>
             <p>{{ previewText }}</p>
@@ -23,6 +25,10 @@ export default {
       required: true
     },
     previewText:{
+      type: String,
+      required: true
+    },
+    thumbnail:{
       type: String,
       required: true
     }
