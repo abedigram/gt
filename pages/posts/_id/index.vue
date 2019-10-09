@@ -1,23 +1,42 @@
 <template>
-    <div class="single-post-page">
-        <section class="post">
-            <h1 class="post-title" dir="rtl">post's title , سلام!</h1>
-            <div class="post-details">
-                <div class="post-detail">last updated on XXX</div>
-                <div class="post-detail">written by NAME</div>
-            </div>
-            <p>
-                post's content
-            </p>
-            <section class="post-feedback">
-                <p>
-                    write down ur feedback.
-                    send mail to <a href="mailTo:contact@greentile.ir">contact@greentile.ir</a>
-                </p>
-            </section>
-        </section>
-    </div>
+  <div class="single-post-page">
+    <section class="post">
+      <h1 class="post-title" dir="rtl">{{ loadedPost.title }}</h1>
+      <div class="post-details">
+        <div class="post-detail">last updated on {{ loadedPost.updatedDate }}</div>
+        <div class="post-detail">written by {{ loadedPost.author }}</div>
+      </div>
+      <p>{{ loadedPost.content }}</p>
+      <section class="post-feedback">
+        <p>
+          write down ur feedback.
+          send mail to
+          <a href="mailTo:contact@greentile.ir">contact@greentile.ir</a>
+        </p>
+      </section>
+    </section>
+  </div>
 </template>
+
+<script>
+export default {
+  asyncData(context, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPost: {
+          id: "1",
+          title: "first post (ID: " + context.route.params.id + ")", // the same this.$route.params.id
+          previewText: "an awesome post",
+          author: "abedigram",
+          updatedDate: new Date(),
+          content: "hello it's a dummy text which doesn't have any meaning and is just to fill the container",
+          thumbnail: "https://picsum.photos/400/200"
+        }
+      });
+    }, 1000);
+  }
+};
+</script>
 
 <style scoped>
 .single-post-page {
