@@ -15,24 +15,25 @@ export default {
     return new Promise((resolve, reject) => {
       
       setTimeout(() => {
-            resolve({
-              loadedPosts: [
-                {
-                  id: "1",
-                  title: "First Post",
-                  previewText: "This is our first post!",
-                  thumbnail:
-                    "https://picsum.photos/400/200"
-                },
-                {
-                  id: "2",
-                  title: "Second Post",
-                  previewText: "This is our second post!",
-                  thumbnail:
-                    "https://picsum.photos/400/200"
-                }
-              ]
-            });
+            // resolve({
+            //   loadedPosts: [
+            //     {
+            //       id: "1",
+            //       title: "First Post",
+            //       previewText: "This is our first post!",
+            //       thumbnail:
+            //         "https://picsum.photos/400/200"
+            //     },
+            //     {
+            //       id: "2",
+            //       title: "Second Post",
+            //       previewText: "This is our second post!",
+            //       thumbnail:
+            //         "https://picsum.photos/400/200"
+            //     }
+            //   ]
+            // });
+            reject(new Error())
           }, 1000);
 
     })
@@ -40,7 +41,7 @@ export default {
       return data;
     })
     .catch(e => {
-      context.error(new Error())
+      context.error(e)
     })
   }
 };
