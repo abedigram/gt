@@ -14,24 +14,16 @@ export default {
   components:{
     PostList
   },
-  asyncData(context, callback){
-    console.log(context);
-    setTimeout(()=>{
-      callback(null, { loadedPosts : [
-          { id:"1", title:"first post", previewText:"an awesome post", thumbnail:"https://picsum.photos/400/200"},
-          { id:"2", title:"second post", previewText:"an awesome post", thumbnail:"https://picsum.photos/400/200"},
-          { id:"3", title:"third post", previewText:"an awesome post", thumbnail:"https://picsum.photos/400/200"}
-          ]});
-        },1500);
-      },
+  computed: {
+    loadedPosts(){
+      return this.$store.getters.loadedPosts;
+    }
+  },
   // data() {
   //   return{
   //     loadedPosts:[]
   //   }
   // },
-  created(){
-
-  }
 }
 </script>
 <style scoped>
