@@ -35,7 +35,7 @@
                             resolve();
                               // reject(new Error())
                             }, 1000);
-                        });
+                        }); 
 
                 },
                 
