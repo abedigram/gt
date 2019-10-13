@@ -17,7 +17,8 @@ export default {
   methods: {
     onSubmitted(postData){
       axios.post('https://knocks-town.firebaseio.com/posts.json', postData)
-      .then(result => console.log(result));
+      .then(result => console.log(result))
+      .catch(e => console.log(e));
     }
   }
 };
