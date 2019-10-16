@@ -19,21 +19,17 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
-  asyncData(context, callback) {
-    setTimeout(() => {
-      callback(null, {
-        loadedPost: {
-          id: "1",
-          title: "first post (ID: " + context.route.params.id + ")", // the same this.$route.params.id
-          previewText: "an awesome post",
-          author: "abedigram",
-          updatedDate: new Date(),
-          content: "hello it's a dummy text which doesn't have any meaning and is just to fill the container",
-          thumbnail: "https://picsum.photos/400/200"
+  asyncData(context) {
+    return axios.get('https://knocks-town.firebaseio.com/posts/' + context.params.id + '.json')
+      .then(res => {
+        return {
+          loadedPost: res.data
         }
-      });
-    }, 1000);
+      })
+      .catch(e => context.error(e));
   }
 };
 </script>
